@@ -1,8 +1,10 @@
 package org.authservice.auth;
 
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+import org.authservice.eventProducer.UserInfoProducer;
 import org.authservice.repository.UserRepository;
 import org.authservice.service.UserDetailsServiceImpl;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +24,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+@Slf4j
 @Configuration
 @EnableMethodSecurity
 @Data
@@ -33,14 +36,14 @@ public class SecurityConfig {
     @Autowired
     private final UserDetailsServiceImpl userDetailsServiceImpl;
 
-//    @Autowired
-//    private final UserInfoProducer userInfoProducer;
+    @Autowired
+    private final UserInfoProducer userInfoProducer;
 
 
     @Bean
     @Autowired
     public UserDetailsService userDetailsService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
-        return new UserDetailsServiceImpl(userRepository, passwordEncoder);
+        return new UserDetailsServiceImpl(userRepository, passwordEncoder, userInfoProducer);
     }
 
     @Bean

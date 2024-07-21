@@ -1,6 +1,7 @@
 package org.authservice.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -16,6 +17,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.authservice.entities.UserRole;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -23,9 +25,10 @@ import java.util.Set;
 @Entity
 @Data
 @ToString
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "users")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserInfo {
 
     @Id
@@ -44,4 +47,5 @@ public class UserInfo {
     )
 
     private Set<UserRole> roles = new HashSet<>();
+
 }
