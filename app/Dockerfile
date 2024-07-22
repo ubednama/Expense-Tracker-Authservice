@@ -1,6 +1,3 @@
-FROM ubuntu:latest
-LABEL authors="ubednama"
-
 FROM openjdk:21
 
 # Set the working directory inside the container
