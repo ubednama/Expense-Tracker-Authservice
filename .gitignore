@@ -1,25 +1,28 @@
 # Ignore Gradle project-specific cache directory
-HELP.md
-.gradle
+.gradle/
 
+# Ignore Gradle wrapper jar file
 !gradle/wrapper/gradle-wrapper.jar
+
+# Ignore build directories
 !**/src/main/**/build/
 !**/src/test/**/build/
+app/build
 
 ### STS ###
-.apt_generated
+.apt_generated/
 .classpath
 .factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
+.settings/
+.springBeans/
+.sts4-cache/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -36,3 +39,65 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# Eclipse specific
+.settings/
+.project
+.classpath
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Node.js
+node_modules/
+
+# Package distribution
+*.tar.gz
+*.zip
+*.jar
+*.war
+*.ear
+
+# Environment files
+.env
+*.env
+
+# JetBrains Rider
+.idea/
+
+# Misc
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.user
+*.userosscache
+*.suo
+*.cache
+*.pid
+*.seed
+*.log
+
+# OS-specific files
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+*.DS_Store
+*.Thumbs.db
+*.ehthumbs.db
+
+# Coverage reports
+coverage/
