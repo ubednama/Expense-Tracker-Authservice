@@ -4,8 +4,6 @@
 
 
 # Other Services
-# Other Services
-
 - **User Service**: Handles user data and profiles.</br>
 [User Service Repository](https://github.com/ubednama/Expense-Tracker-Userservice)
 
